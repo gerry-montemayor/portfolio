@@ -4,4 +4,3 @@ TODO:
 - add more details about myself, including hobbies
 - rebuild website using react
   
-https://gerry-montemayor.github.io/htmlportfolio/ 

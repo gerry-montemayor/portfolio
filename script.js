@@ -12,3 +12,9 @@ const resumeImage = document.getElementById('resume-img');
 zoomInButton.addEventListener('click', () => {
   resumeImage.classList.toggle('active');
 });
+
+var numImages = document.getElementsByTagName("img")
+
+for (var i = 0; i < numImages.length; i++ ) {
+  numImages[i].setAttribute("draggable","false");
+}

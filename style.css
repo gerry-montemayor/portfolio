@@ -356,9 +356,11 @@ html {
 }
 
 .about-text-container {
+  opacity: 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  animation: fadeIn 2s forwards;
 }
 
 
@@ -374,7 +376,6 @@ html {
   margin-left: 50px;
   margin-top: 50px;
   height: fit-content;
-
 }
 
 .description {
@@ -463,6 +464,7 @@ html {
 } */
 
 .more-about-container {
+  opacity: 0;
   position: absolute;
   height: 600px;
   margin-top: 650px;
@@ -470,6 +472,8 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeIn 2s .5s forwards;
+
 }
 
 .more-title {
@@ -494,7 +498,6 @@ html {
 }
 
 .even-more {
-  background-color: green;
   margin-top: 2000px;
 }
 

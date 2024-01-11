@@ -13,8 +13,12 @@ zoomInButton.addEventListener('click', () => {
   resumeImage.classList.toggle('active');
 });
 
-var numImages = document.getElementsByTagName("img")
 
-for (var i = 0; i < numImages.length; i++ ) {
-  numImages[i].setAttribute("draggable","false");
-}
+// function disableDraggableImg() {
+//   var images = document.getElementsByTagName("img");
+//   for (var i = 0; i < images.length; i++) {
+//     images[i].setAttribute("draggable","false");
+//   }
+// }
+
+// disableDraggableImg();

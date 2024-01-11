@@ -509,16 +509,28 @@ html {
   }
 }
 
+.main-project-container {
+  position: absolute;
+  margin-top: 100px;
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 1300px;
+}
+
 .projects-container {
   position: absolute;
   display: flex;
   width: 90%;
-  margin: 5%;
-  margin-top: 150px;
-  height: auto;
+  margin-top: 450px;;
+  height: fit-content;
+  margin-bottom: 0px;
   gap: 60px;
   justify-content: center;
   align-items: center;
+
 }
 
 
@@ -534,13 +546,12 @@ html {
   border-radius: 50px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 500px;
   align-items: center;
 }
 
 .mtd {
   opacity: 0;
-  animation: fadeIn 2s forwards;
+  animation: fadeIn 3s forwards;
 }
 
 .project-desc {
@@ -549,20 +560,91 @@ html {
   color: whitesmoke;
   text-wrap: wrap;
   font-family: 'Open Sans', sans-serif;
+}
+
+.project-display a {
+  display: flex;
+  gap: 10px;
+}
+
+.project-display img {
+  width: 30px;
+}
+
+.portfolio-project {
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+}
+
+.rover-container {
+  opacity: 0;
+  margin-top: 20px;
+  background-color: #323b4e;
+  border: 8px solid #CCCCB5;
+  border-radius: 30px;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;  
+  animation: fadeIn 3s forwards;
+}
+
+.rover-container img {
+  width: 80%;
+  height: 300px;
+  border: 8px solid #CCCCB5;
+  border-radius: 30px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.rover-container p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
 
 }
+
+.rover-text {
+  height: 90%;
+  text-wrap: wrap;
+  margin: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 
 @media (max-width: 1375px) {
+
+.rover-container {
+  height: fit-content
+}
+
   .projects-container {
     flex-direction: column;
-    gap: 30px;
     justify-content: flex-start;
     height: min-content;
+    margin-top: 500px;
   }
+  .mtd {
+    margin-bottom: 10px;
+  }
+
 }
 
 @media (max-width: 1270px) {
+
+
+  .rover-container {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .projects-container {
+    margin-top: 600px;
+  }
   .about-container img {
     display: none;
   }
@@ -588,6 +670,10 @@ html {
 
 @media (max-width: 1160px) {
 
+
+  .projects-container {
+    margin-top: 700px
+  }
 
   .home-container {
     justify-content: center;
@@ -617,6 +703,12 @@ html {
 }
 
 @media (max-width: 960px) {
+
+  .projects-container {
+    margin-top: 750px;
+  }
+
+
   .website p {
     display: none;
   }
@@ -672,6 +764,7 @@ html {
   .projects-container {
     justify-content: center;
     align-items: center;
+    margin-top: 900px;
   }
 
   .project-display {

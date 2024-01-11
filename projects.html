@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,11 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto+Slab:wght@600&display=swap"
     rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-  <script src="./script.js" defer> </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="navbar">
     <div class="nav-title">GM.</div>
@@ -64,22 +65,55 @@
     </div>
   </div>
 
-  <div class="projects-container">
-    <div class="project-display mtd">
-      <img src="./assets/images/mtd-screenshot.png" style="margin-top: 20px;
-      width: 90%; border: 8px solid tan; border-radius: 20px;">
-      <p class="project-desc"> I collaborated with a team of 4 to 
-        develop a Cornell-themed tower defense game! Over a span of 3 months, we
-        worked to add projectile-tracking, tower-placement logic, and a simple to
-        use menu bar that allows for a user to upgrade their defenses as the levels become more difficult.
-        I'm proud to say I handdrew the sprites and all the game art! Check out the full project here: 
-      </p>
-      <a href="https://github.com/gerry-montemayor/McGrawTowerDefense" style="color: #448dec; text-align: center; font-size: 25px;">Project Link</a>
+  <div class="main-project-container">
+    <div class="rover-container">
+      <img src="./assets/images/mars-rover-pic.png">
+      <div class="rover-text">
+        <p>I am part of the Mars Rover Project team at
+          Cornell University! I'm currently on the software subteam, where we
+          focus on path-planning, computer vision, and controls for the rover.
+          More specifically, I'm working with a partner on the user interface for the rover. In
+          the past, we've struggled to efficiently see information of the rover while
+          its out in the field, so we're trying to make the process of visualizing the
+          rover's information much simpler. We are using Foxglove Studio, a robot
+          visualization software, and React.js to customize our own GUI panels. Read more
+          about the team and the competition we participate in on the website below!
+        </p>
+        <a href="https://marsrover.engineering.cornell.edu/"style="color: #448dec; ; font-size: 25px;">Website</a>
+      </div>
     </div>
+    <div class="projects-container">
+      <div class="project-display mtd">
+        <img src="./assets/images/mtd-screenshot.png" style="margin-top: 20px;
+      width: 90%; border: 8px solid tan; border-radius: 20px;">
+        <p class="project-desc"> I collaborated with a team of 4 to
+          develop a Cornell-themed tower defense game! Over a span of 3 months, we
+          worked to add projectile-tracking, tower-placement logic, and a simple to
+          use menu bar that allows for a user to upgrade their defenses as the levels become more difficult.
+          I'm proud to say I handdrew the sprites and all the game art! Check out the full project here:
+        </p>
+        <a href="https://github.com/gerry-montemayor/McGrawTowerDefense"
+          style="color: #448dec; text-align: center; font-size: 25px;">Project Link
+          <img src="./assets/images/github-icon-blue.png">
+        </a>
+      </div>
 
-    <div class="project-display">
-      
+      <div class="project-display portfolio-project">
+        <img src="./assets/images/portfolio-ss.png" style="margin-top: 20px;
+      width: 90%; border: 8px solid tan; border-radius: 20px;">
+        <p class="project-desc"> This is the first website I've made. I recently completed a full-stack course on Udemy, and I've
+          been building this website since I first learned HTML/CSS. I've also incorporated some Javascript as well. I am planning on 
+          rebuilding this website using React soon! Check out my process for making my portfolio below.
+        </p>
+        <a href="https://github.com/gerry-montemayor/htmlportfolio"
+          style="color: #448dec; text-align: center; font-size: 25px;">Github
+          <img src="./assets/images/github-icon-blue.png">
+        </a>
+      </div>
     </div>
   </div>
+  <script src="./script.js"> </script>
+
 </body>
+
 </html>

@@ -34,6 +34,10 @@ body {
   height: 300px;
 }
 
+h2 {
+  color: rgb(123, 149, 187)
+}
+
 .waving-hand {
   animation-name: wave-animation;
   /* Refers to the name of your @keyframes element below */

@@ -1,29 +1,33 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import "./css/navbar.css"
-import home_icon from "./imgs/homeicon.png"
-
+import home from "./imgs/homeicon.png"
+import proj from "./imgs/projicon.png"
+import cv from "./imgs/cvicon.png"
 
 const Navbar = () => {
-  return(
+  return (
     <nav class="navbar">
       <div class="title">
-      <h1>GM.</h1>
+        <Link to="/home" style={{ textDecoration: 'none', color: 'white' }}>
+          <h1>GM.</h1>
+        </Link>
       </div>
       <div class="nav-items">
         <ul>
           <li class="nav-link">
-            <img src={home_icon}></img>
+            <img src={home}></img>
             <Link to="/home" class="nav-link">Home</Link>
           </li>
           <li class="nav-link">
+            <img src={proj}></img>
+
             <Link to="/projects" class="nav-link">Projects</Link>
           </li>
           <li class="nav-link">
+            <img src={cv}></img>
+
             <Link to="/resume" class="nav-link">Resume</Link>
-          </li>
-          <li>
-            <button>O</button>
           </li>
         </ul>
       </div>

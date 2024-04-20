@@ -2,13 +2,14 @@ import React from 'react';
 import Navbar from './Navbar'
 import "./css/homepage.css"
 import selfie from "./imgs/selfie.jpg"
-
+import rover from "./model"
 
 
 const Homepage = () => {
   return (
     <div class="homepage-container">
       <Navbar />
+      
       <div class="content-container">
         <img class="selfie" src={selfie}></img>
         <div class="about-me">

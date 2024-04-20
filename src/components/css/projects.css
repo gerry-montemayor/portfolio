@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #1d1f23;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  width: 800px;
+  height: 100vh;
+  background-color: #18191d;
+  display: flex;
+  flex-direction: column;
+}

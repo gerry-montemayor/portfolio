@@ -16,18 +16,22 @@ const Navbar = () => {
       <div class="nav-items">
         <ul>
           <li class="nav-link">
-            <img src={home}></img>
-            <Link to="/home" class="nav-link">Home</Link>
+            <Link to="/home" class="nav-link">
+              <img src={home}></img>
+              Home
+            </Link>
           </li>
           <li class="nav-link">
-            <img src={proj}></img>
-
-            <Link to="/projects" class="nav-link">Projects</Link>
+            <Link to="/projects" class="nav-link">
+              <img src={proj}></img>
+              Projects
+            </Link>
           </li>
           <li class="nav-link">
-            <img src={cv}></img>
-
-            <Link to="/resume" class="nav-link">Resume</Link>
+            <Link to="/resume" class="nav-link">
+              <img src={cv}></img>
+              Resume
+            </Link>
           </li>
         </ul>
       </div>

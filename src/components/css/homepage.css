@@ -5,7 +5,7 @@ body {
 }
 
 .homepage-container {
-  width: 800px;
+  width: 1000px;
   height: 100vh;
   background-color: #18191d;
   display: flex;
@@ -16,26 +16,59 @@ body {
   width: 100%;
   height: 80%;
   padding: 30px;
-  margin-top: 30px;
+  margin-top: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  height: min-content
 }
 
 .selfie {
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   border-radius: 30px;
-  border: 10px solid rgb(85, 104, 130)
+  border: 10px solid rgb(85, 104, 130);
 }
 
 .about-me {
   color: white;
   width: 400px;
   height: 300px;
+  margin-top: 20px;
 }
 
 h2 {
   color: rgb(123, 149, 187)
+}
+
+.ext-links-container {
+  width: 300px;
+  height: 80px;
+  margin-top: 50px;
+  align-self: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+.ext-link {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.ext-link img {
+  width: 65px;
+  height: 65px;
+}
+
+
+.ext-link:hover {
+  background-color: rgb(123, 149, 187);
 }
 
 .waving-hand {

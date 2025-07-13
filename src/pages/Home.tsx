@@ -10,7 +10,7 @@ const Home = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl font-bold text-primary">
-                Hello, I'm Gerry
+                Hello, I'm Gerry <span className="wave">👋</span>
               </h1>
               <h2 className="text-2xl md:text-3xl text-muted-foreground">
                 Computer Science Student & Aspiring Software Engineer

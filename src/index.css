@@ -59,4 +59,16 @@
   html {
     scroll-behavior: smooth;
   }
+
+  .wave {
+    animation: wave 1s ease-in-out infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+  }
+
+  @keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    10%, 30%, 50%, 70% { transform: rotate(-10deg); }
+    20%, 40%, 60%, 80% { transform: rotate(12deg); }
+  }
 }

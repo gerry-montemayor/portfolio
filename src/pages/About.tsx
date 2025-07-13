@@ -101,6 +101,14 @@ const About = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid lg:grid-cols-2 gap-6 items-center">
+                  
+                  <div>
+                    <img 
+                      src="/lovable-uploads/e06ac5db-efa6-479b-bc28-ef0727f1b8a8.png" 
+                      alt="Cornell Mars Rover team member" 
+                      className="rounded-lg shadow-lg w-full h-auto"
+                    />
+                  </div>
                   <div>
                     <p className="text-muted-foreground">
                       I've been a member of Cornell Mars Rover since my sophomore year. As a part of the 
@@ -108,13 +116,6 @@ const About = () => {
                       I've primarily worked in python and ROS2 (Robot Operating System) to build nodes and packages for
                       different capabilities of the rover, such as object detection.
                     </p>
-                  </div>
-                  <div>
-                    <img 
-                      src="/lovable-uploads/e06ac5db-efa6-479b-bc28-ef0727f1b8a8.png" 
-                      alt="Cornell Mars Rover team member" 
-                      className="rounded-lg shadow-lg w-full h-auto"
-                    />
                   </div>
                 </div>
               </CardContent>

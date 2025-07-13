@@ -13,9 +13,7 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-primary mb-4">About Me</h1>
-          <p className="text-xl text-muted-foreground">
-            Computer Science Student at Cornell University & Aspiring Software Engineer
-          </p>
+          
         </div>
 
         {/* Story */}

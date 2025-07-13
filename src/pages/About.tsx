@@ -75,10 +75,17 @@ const About = () => {
                 <p className="text-muted-foreground">Seam AI • Summer 2024</p>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  Developed AI-powered software solutions and contributed to machine learning projects. 
-                  Collaborated with engineering teams to implement scalable software architectures.
-                </p>
+                <div className="space-y-4">
+                  <p className="text-muted-foreground">
+                    Developed AI-powered software solutions and contributed to machine learning projects. 
+                    Collaborated with engineering teams to implement scalable software architectures.
+                  </p>
+                  <img 
+                    src="/lovable-uploads/d3c0b009-5adb-4a54-9872-e247941c904b.png" 
+                    alt="Seam AI team outing in San Francisco" 
+                    className="rounded-lg shadow-lg w-full h-auto"
+                  />
+                </div>
               </CardContent>
             </Card>
             <Card>

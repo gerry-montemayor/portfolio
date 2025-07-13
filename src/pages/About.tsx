@@ -36,11 +36,7 @@ const About = () => {
                     programming autonomous rovers, or building web solutions, I bring 
                     enthusiasm and a problem-solving approach to every project.
                   </p>
-                  <p className="text-lg leading-relaxed">
-                    When I'm not coding, you'll find me exploring new technologies, 
-                    working on robotics projects, or collaborating with fellow students 
-                    on innovative solutions.
-                  </p>
+                  
                 </div>
                 <div className="lg:order-first">
                   <img 
@@ -61,15 +57,8 @@ const About = () => {
             <CardContent className="p-8">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-6">
-                  Outside of technology, I'm passionate about staying active and exploring the outdoors. 
-                  I've been playing soccer since I was young, which taught me the value of teamwork 
-                  and perseverance. Music is another creative outlet for me - I enjoy playing guitar 
-                  in my spare time.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  Adventure sports keep me energized and help me tackle challenges with a fresh perspective. 
-                  Whether I'm rock climbing, hitting the slopes skiing, or exploring new trails, 
-                  I find that these experiences enhance my problem-solving skills and bring balance to my life.
+                  I'm passionate about staying active and exploring the outdoors. I've played soccer since I was you, and enjoy
+                   other sports, such as rock climbing and skiing. I also am learning how to play the guitar!
                 </p>
               </div>
             </CardContent>

@@ -2,64 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Personal Website Design System - Professional & Modern */
+/* Simple Personal Website - Clean Design System */
 
 @layer base {
   :root {
-    /* Base colors */
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    /* Base colors - Off white background */
+    --background: 40 15% 97%;
+    --foreground: 220 50% 15%;
 
     /* Card colors */
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 50% 15%;
 
     /* Popover colors */
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 50% 15%;
 
-    /* Primary brand colors - Deep blue */
-    --primary: 221 83% 53%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 221 83% 65%;
+    /* Primary - Dark blue */
+    --primary: 220 50% 25%;
+    --primary-foreground: 40 15% 97%;
 
-    /* Secondary colors - Warm purple */
-    --secondary: 262 83% 58%;
-    --secondary-foreground: 0 0% 98%;
+    /* Secondary - Tan */
+    --secondary: 35 35% 75%;
+    --secondary-foreground: 220 50% 15%;
 
     /* Muted colors */
-    --muted: 240 5% 6%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 40 10% 90%;
+    --muted-foreground: 220 20% 50%;
 
-    /* Accent colors - Warm orange */
-    --accent: 25 95% 53%;
-    --accent-foreground: 240 10% 3.9%;
+    /* Accent - Light blue */
+    --accent: 200 60% 80%;
+    --accent-foreground: 220 50% 15%;
 
     /* Destructive colors */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
 
     /* Border and input colors */
-    --border: 240 5% 11%;
-    --input: 240 5% 11%;
-    --ring: 221 83% 53%;
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 220 50% 25%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(262 83% 58%));
-    --gradient-secondary: linear-gradient(135deg, hsl(262 83% 58%), hsl(25 95% 53%));
-    --gradient-subtle: linear-gradient(180deg, hsl(240 10% 3.9%), hsl(240 5% 6%));
-    --gradient-hero: linear-gradient(135deg, hsl(240 10% 3.9%) 0%, hsl(240 5% 6%) 50%, hsl(240 10% 3.9%) 100%);
-
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(221 83% 53% / 0.3);
-    --shadow-glow: 0 0 40px hsl(221 83% 53% / 0.2);
-    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
-
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -124,105 +108,9 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background: var(--gradient-hero);
   }
 
   html {
     scroll-behavior: smooth;
-  }
-}
-
-@layer components {
-  /* Hero Section Styles */
-  .hero-gradient {
-    background: var(--gradient-hero);
-  }
-
-  .gradient-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Button Variants */
-  .btn-hero {
-    @apply bg-primary hover:bg-primary-glow text-primary-foreground;
-    box-shadow: var(--shadow-elegant);
-    transition: var(--transition-smooth);
-  }
-
-  .btn-hero:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-glow);
-  }
-
-  .btn-outline-glow {
-    @apply border-primary/50 text-primary hover:bg-primary/10;
-    transition: var(--transition-smooth);
-    backdrop-filter: blur(10px);
-  }
-
-  /* Card Styles */
-  .card-elegant {
-    @apply bg-card/50 backdrop-blur-sm border-border/50;
-    box-shadow: var(--shadow-card);
-    transition: var(--transition-smooth);
-  }
-
-  .card-elegant:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-elegant);
-  }
-
-  /* Section Styles */
-  .section-gradient {
-    background: var(--gradient-subtle);
-  }
-
-  /* Animation Classes */
-  .fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-
-  .slide-up {
-    animation: slideUp 0.8s ease-out forwards;
-  }
-
-  .scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }

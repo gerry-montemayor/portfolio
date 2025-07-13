@@ -61,7 +61,7 @@
   }
 
   .wave {
-    animation: wave 1s ease-in-out infinite;
+    animation: wave 4s ease-in-out infinite;
     transform-origin: 70% 70%;
     display: inline-block;
   }

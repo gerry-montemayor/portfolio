@@ -45,21 +45,7 @@ const About = () => {
           </Card>
         </div>
 
-        {/* Skills */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-primary mb-6">Skills & Technologies</h2>
-          <div className="flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <Badge 
-                key={skill} 
-                variant="secondary" 
-                className="text-sm py-2 px-4"
-              >
-                {skill}
-              </Badge>
-            ))}
-          </div>
-        </div>
+       
 
         {/* Experience */}
         <div>
@@ -89,6 +75,21 @@ const About = () => {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+          {/* Skills */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-primary mb-6">Skills & Technologies</h2>
+          <div className="flex flex-wrap gap-3">
+            {skills.map((skill) => (
+              <Badge 
+                key={skill} 
+                variant="secondary" 
+                className="text-sm py-2 px-4"
+              >
+                {skill}
+              </Badge>
+            ))}
           </div>
         </div>
       </div>

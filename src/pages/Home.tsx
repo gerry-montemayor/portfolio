@@ -38,13 +38,13 @@ const Home = () => {
             
             <div className="flex gap-4 pt-4">
               <Button variant="ghost" size="icon">
-                <Github className="h-6 w-6" />
+                <Github className="h-5 w-5" />
               </Button>
               <Button variant="ghost" size="icon">
-                <Linkedin className="h-6 w-6" />
+                <Linkedin className="h-5 w-5" />
               </Button>
               <Button variant="ghost" size="icon">
-                <Mail className="h-6 w-6" />
+                <Mail className="h-5 w-5" />
               </Button>
             </div>
           </div>

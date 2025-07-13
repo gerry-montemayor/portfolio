@@ -12,9 +12,7 @@ const Home = () => {
               <h1 className="text-5xl md:text-6xl font-bold text-primary">
                 Hello, I'm Gerry <span className="wave">👋</span>
               </h1>
-              <h2 className="text-2xl md:text-3xl text-muted-foreground">
-                Computer Science Student & Aspiring Software Engineer
-              </h2>
+              
               <p className="text-lg text-muted-foreground max-w-lg">
                 Cornell University student passionate about AI, robotics, and software development. 
                 Building the future through innovative technology solutions.

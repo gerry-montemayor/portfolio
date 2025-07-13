@@ -1,62 +1,97 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Download, MapPin, Mail, Phone, Globe } from "lucide-react";
+import { Download, Mail, Phone, Linkedin, Github } from "lucide-react";
 
 const Resume = () => {
   const experience = [
     {
-      title: "Senior Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      period: "2022 - Present",
+      title: "Software Engineering Intern",
+      company: "Seam AI",
+      period: "June 2025 - Aug 2025",
       location: "San Francisco, CA",
+      techStack: "Python, GCP, LangSmith/Graph",
       responsibilities: [
-        "Lead development of React-based web applications serving 100k+ users",
-        "Architect and implement scalable Node.js backend services",
-        "Mentor junior developers and conduct code reviews",
-        "Collaborate with design and product teams on feature development"
+        "Contributed to a fast-paced, growing startup focused on leveraging AI for sales/marketing teams",
+        "Developed AI agents to support core use-cases across the platform, including custom persona generation"
       ]
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Innovations Co.",
-      period: "2020 - 2022",
-      location: "Austin, TX",
+      title: "Application Developer",
+      company: "AI Innovation Lab | IT@Cornell",
+      period: "Sep 2024 - Mar 2025",
+      location: "Ithaca, NY",
       responsibilities: [
-        "Developed responsive web applications using React and TypeScript",
-        "Built RESTful APIs and integrated third-party services",
-        "Optimized application performance and implemented CI/CD pipelines",
-        "Participated in agile development processes and sprint planning"
+        "Developer for AI initiative at Cornell building GenAI-powered apps to support campus organizations",
+        "Building application integrating OCR technologies, VLMs, and LLMs to automate expense processing, ensure compliance with state/school policies, and reduce manual workload for financial team"
       ]
     },
     {
-      title: "Frontend Developer",
-      company: "Creative Agency",
-      period: "2019 - 2020",
-      location: "Remote",
+      title: "Software Developer Intern",
+      company: "Technology Advancement Center",
+      period: "May 2024 - Aug 2024",
+      location: "Columbia, MD",
       responsibilities: [
-        "Created interactive user interfaces for client websites",
-        "Implemented responsive designs with modern CSS frameworks",
-        "Collaborated with designers to ensure pixel-perfect implementations",
-        "Maintained and updated legacy codebases"
+        "Developed a virtual assistant to support business operations, including front-desk interactions and company events",
+        "Deployed a secure web application with Docker and AWS EC2, establishing a CI/CD pipeline to streamline delivery of weekly MVPs and improvements based on user feedback",
+        "Enhanced the user experience with features such as multiple chatting modes, face-detection, vocal conversation support, a live-streaming avatar, and an interactive facility map"
+      ]
+    },
+    {
+      title: "Robotics Software Engineer",
+      company: "Cornell Mars Rover",
+      period: "Aug 2023 - Present",
+      location: "Ithaca, NY",
+      responsibilities: [
+        "Programmer for project team that builds semi-autonomous rover to compete in University Rover Challenge (URC)",
+        "Collaborate with the Science team to optimize on-board spectrometer code, allowing for precise detection of chemical compounds in soil samples during competition"
+      ]
+    }
+  ];
+
+  const projects = [
+    {
+      title: "AR Tag Detector",
+      organization: "Cornell Mars Rover",
+      period: "Aug 2024 - May 2025",
+      description: "Implemented a ROS2 package with OpenCV to process camera input to detecting tags in field, determine relative positions and orientations of tags, and navigate difficult terrain for Autonomous Challenge at URC"
+    },
+    {
+      title: "Rover Interface",
+      organization: "Cornell Mars Rover",
+      period: "Aug 2023 - May 2024",
+      description: [
+        "Implemented a high-performance interface to operate and access rover capabilities, including camera feeds, life-detection systems, robotic arm simulations, and a central ROS2 node launch hub",
+        "Created specialized GUI components using React and Foxglove Studio, a robot visualization platform, enhancing rover control through seamless integration with ROS2"
+      ]
+    },
+    {
+      title: "McGraw Tower Defense",
+      organization: "Github",
+      period: "Sep 2023 - Dec 2023",
+      description: [
+        "Developed a Cornell-themed tower defense game in OCaml with player upgrades and bullet-tracking physics",
+        "Designed game art and a responsive UI, displaying creative proficiency and greatly enhancing user experience"
       ]
     }
   ];
 
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      school: "University of Technology",
-      period: "2015 - 2019",
-      location: "Boston, MA"
+      degree: "B.S. in Computer Science, Minor in Electrical & Computer Engineering",
+      school: "Cornell University",
+      period: "Expected May 2026",
+      location: "Ithaca, NY",
+      gpa: "GPA: 3.42/4.0",
+      courses: "Deep Learning, Machine Learning, Algorithms, Data Science, OOP & Data Structures"
     }
   ];
 
   const skills = {
-    "Frontend": ["React", "TypeScript", "JavaScript", "HTML/CSS", "Tailwind CSS", "Next.js"],
-    "Backend": ["Node.js", "Python", "Express.js", "REST APIs", "GraphQL"],
-    "Database": ["PostgreSQL", "MongoDB", "Redis"],
-    "Tools & DevOps": ["Git", "Docker", "AWS", "Vercel", "Jest", "CI/CD"]
+    "Programming Languages": ["Python", "C/C++", "JavaScript", "Java", "OCaml", "HTML/CSS"],
+    "Frameworks/Libraries": ["PyTorch", "Scikit", "NumPy", "LangSmith", "React", "Express.js", "Node.js", "ROS"],
+    "Developer Tools": ["Git", "Docker", "Google Cloud Platform", "AWS ECS", "Linux", "MongoDB", "Foxglove Studio"],
+    "Languages": ["English", "Spanish"]
   };
 
   return (
@@ -64,25 +99,25 @@ const Resume = () => {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-primary mb-2">Alex Johnson</h1>
-          <p className="text-xl text-muted-foreground mb-4">Full Stack Developer</p>
+          <h1 className="text-4xl font-bold text-primary mb-2">Gerardo Montemayor</h1>
+          <p className="text-xl text-muted-foreground mb-4">Computer Science Student & Aspiring Software Engineer</p>
           
           <div className="flex justify-center gap-6 text-sm text-muted-foreground mb-6">
             <div className="flex items-center gap-1">
-              <MapPin className="h-4 w-4" />
-              San Francisco, CA
-            </div>
-            <div className="flex items-center gap-1">
               <Mail className="h-4 w-4" />
-              alex@example.com
+              gerardom1226@gmail.com
             </div>
             <div className="flex items-center gap-1">
               <Phone className="h-4 w-4" />
-              (555) 123-4567
+              (443) 538-0729
             </div>
             <div className="flex items-center gap-1">
-              <Globe className="h-4 w-4" />
-              alexjohnson.dev
+              <Linkedin className="h-4 w-4" />
+              linkedin.com/in/gerry-montemayor
+            </div>
+            <div className="flex items-center gap-1">
+              <Github className="h-4 w-4" />
+              github.com/gerry-montemayor
             </div>
           </div>
           
@@ -92,20 +127,28 @@ const Resume = () => {
           </Button>
         </div>
 
-        {/* Summary */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>Professional Summary</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground leading-relaxed">
-              Experienced Full Stack Developer with 5+ years of expertise in building scalable web applications. 
-              Proficient in React, Node.js, and modern web technologies. Proven track record of delivering 
-              high-quality solutions in fast-paced environments while mentoring junior developers and 
-              collaborating effectively with cross-functional teams.
-            </p>
-          </CardContent>
-        </Card>
+        {/* Education */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-primary mb-6">Education</h2>
+          {education.map((edu, index) => (
+            <Card key={index}>
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle className="text-lg">{edu.degree}</CardTitle>
+                    <p className="text-primary font-medium">{edu.school}</p>
+                    <p className="text-sm text-muted-foreground mt-1">{edu.gpa}</p>
+                    <p className="text-sm text-muted-foreground">Relevant Courses: {edu.courses}</p>
+                  </div>
+                  <div className="text-right text-sm text-muted-foreground">
+                    <p>{edu.period}</p>
+                    <p>{edu.location}</p>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
 
         {/* Experience */}
         <div className="mb-8">
@@ -118,6 +161,9 @@ const Resume = () => {
                     <div>
                       <CardTitle className="text-lg">{job.title}</CardTitle>
                       <p className="text-primary font-medium">{job.company}</p>
+                      {job.techStack && (
+                        <p className="text-sm text-muted-foreground mt-1">Tech Stack: {job.techStack}</p>
+                      )}
                     </div>
                     <div className="text-right text-sm text-muted-foreground">
                       <p>{job.period}</p>
@@ -137,9 +183,42 @@ const Resume = () => {
           </div>
         </div>
 
-        {/* Skills */}
+        {/* Projects */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-primary mb-6">Technical Skills</h2>
+          <h2 className="text-2xl font-bold text-primary mb-6">Projects</h2>
+          <div className="space-y-6">
+            {projects.map((project, index) => (
+              <Card key={index}>
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle className="text-lg">{project.title}</CardTitle>
+                      <p className="text-primary font-medium">{project.organization}</p>
+                    </div>
+                    <div className="text-right text-sm text-muted-foreground">
+                      <p>{project.period}</p>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  {Array.isArray(project.description) ? (
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                      {project.description.map((desc, idx) => (
+                        <li key={idx}>{desc}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-muted-foreground">{project.description}</p>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Skills & Other */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-primary mb-6">Skills & Other</h2>
           <div className="space-y-4">
             {Object.entries(skills).map(([category, skillList]) => (
               <Card key={category}>
@@ -160,26 +239,21 @@ const Resume = () => {
           </div>
         </div>
 
-        {/* Education */}
-        <div>
-          <h2 className="text-2xl font-bold text-primary mb-6">Education</h2>
-          {education.map((edu, index) => (
-            <Card key={index}>
-              <CardHeader>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle className="text-lg">{edu.degree}</CardTitle>
-                    <p className="text-primary font-medium">{edu.school}</p>
-                  </div>
-                  <div className="text-right text-sm text-muted-foreground">
-                    <p>{edu.period}</p>
-                    <p>{edu.location}</p>
-                  </div>
-                </div>
-              </CardHeader>
-            </Card>
-          ))}
-        </div>
+        {/* Hobbies */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Hobbies</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-2">
+              {["Soccer", "Guitar", "Running", "Volleyball", "Reading"].map((hobby) => (
+                <Badge key={hobby} variant="outline">
+                  {hobby}
+                </Badge>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
+import heroImage from "@/assets/hero-image.jpg";
 
 const Home = () => {
   return (
@@ -10,14 +11,14 @@ const Home = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl font-bold text-primary">
-                Hello, I'm Gerry
+                Hi, I'm Gerry!
               </h1>
               <h2 className="text-2xl md:text-3xl text-muted-foreground">
-                Computer Science Student & Aspiring Software Engineer
+                Full Stack Developer
               </h2>
               <p className="text-lg text-muted-foreground max-w-lg">
-                Cornell University student passionate about AI, robotics, and software development. 
-                Building the future through innovative technology solutions.
+                I create clean, modern web applications with a focus on user experience 
+                and performance. Let's build something great together.
               </p>
             </div>
             
@@ -50,8 +51,8 @@ const Home = () => {
           
           <div className="flex justify-center">
             <img 
-              src="/lovable-uploads/ffcee6ea-0b57-4963-abd2-9e541a2c146e.png"
-              alt="Gerardo Montemayor graduation photo" 
+              src={heroImage} 
+              alt="Professional workspace" 
               className="rounded-lg shadow-lg w-full max-w-md h-96 object-cover"
             />
           </div>

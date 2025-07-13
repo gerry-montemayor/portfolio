@@ -75,18 +75,22 @@ const About = () => {
                 <p className="text-muted-foreground">Seam AI • Summer 2024</p>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  <p className="text-muted-foreground">
-                    I had the incredible opportunity to intern at Seam AI this past summer, 
-                    a startup based in San Francisc. Seam leverages AI in a platform that
-                    supports sales/marketing teams. I worked on an agent to help clients build
-                    custom person/company/job level personas to help them find high business-potential profiles.
-                  </p>
-                  <img 
-                    src="/lovable-uploads/d3c0b009-5adb-4a54-9872-e247941c904b.png" 
-                    alt="Seam AI team outing in San Francisco" 
-                    className="rounded-lg shadow-lg w-3/4 h-auto mx-auto"
-                  />
+                <div className="grid lg:grid-cols-2 gap-6 items-center">
+                  <div>
+                    <p className="text-muted-foreground">
+                      I had the incredible opportunity to intern at Seam AI this past summer, 
+                      a startup based in San Francisc. Seam leverages AI in a platform that
+                      supports sales/marketing teams. I worked on an agent to help clients build
+                      custom person/company/job level personas to help them find high business-potential profiles.
+                    </p>
+                  </div>
+                  <div>
+                    <img 
+                      src="/lovable-uploads/d3c0b009-5adb-4a54-9872-e247941c904b.png" 
+                      alt="Seam AI team outing in San Francisco" 
+                      className="rounded-lg shadow-lg w-full h-auto"
+                    />
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -96,12 +100,23 @@ const About = () => {
                 <p className="text-muted-foreground">Cornell Mars Rover • 2023 - Present</p>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  I've been a member of Cornell Mars Rover since my sophomore year. As a part of the 
-                  Software Subteam, I contribute to autonomous navigation, soil sample detection, and more!
-                  I've primarily worked in python and ROS2 (Robot Operating System) to build nodes and packages for
-                  different capabilities of the rover, such as object detection.
-                </p>
+                <div className="grid lg:grid-cols-2 gap-6 items-center">
+                  <div>
+                    <p className="text-muted-foreground">
+                      I've been a member of Cornell Mars Rover since my sophomore year. As a part of the 
+                      Software Subteam, I contribute to autonomous navigation, soil sample detection, and more!
+                      I've primarily worked in python and ROS2 (Robot Operating System) to build nodes and packages for
+                      different capabilities of the rover, such as object detection.
+                    </p>
+                  </div>
+                  <div>
+                    <img 
+                      src="/lovable-uploads/e06ac5db-efa6-479b-bc28-ef0727f1b8a8.png" 
+                      alt="Cornell Mars Rover team member" 
+                      className="rounded-lg shadow-lg w-full h-auto"
+                    />
+                  </div>
+                </div>
               </CardContent>
             </Card>
             <Card>
@@ -110,16 +125,20 @@ const About = () => {
                 <p className="text-muted-foreground">Technology Advancement Center • Summer 2023</p>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  <p className="text-muted-foreground">
-                    At the TAC, I built a fully-fledged front-desk AI assistant. I had a fun time working with
-                    LLMs, learning about full-stack development, and seeing my final product being used!
-                  </p>
-                  <img 
-                    src="/lovable-uploads/c879417b-a8a4-46e4-a003-6ef33e3f1b48.png" 
-                    alt="TAC internship team photo" 
-                    className="rounded-lg shadow-lg w-3/4 h-auto mx-auto"
-                  />
+                <div className="grid lg:grid-cols-2 gap-6 items-center">
+                  <div>
+                    <p className="text-muted-foreground">
+                      At the TAC, I built a fully-fledged front-desk AI assistant. I had a fun time working with
+                      LLMs, learning about full-stack development, and seeing my final product being used!
+                    </p>
+                  </div>
+                  <div>
+                    <img 
+                      src="/lovable-uploads/c879417b-a8a4-46e4-a003-6ef33e3f1b48.png" 
+                      alt="TAC internship team photo" 
+                      className="rounded-lg shadow-lg w-full h-auto"
+                    />
+                  </div>
                 </div>
               </CardContent>
             </Card>

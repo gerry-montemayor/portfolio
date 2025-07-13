@@ -22,23 +22,54 @@ const About = () => {
         <div className="mb-12">
           <Card>
             <CardContent className="p-8">
+              <div className="grid lg:grid-cols-2 gap-8 items-center">
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-lg leading-relaxed mb-6">
+                    I'm a Computer Science student at Cornell University with a passion for 
+                    software engineering and robotics. My journey in tech began with curiosity 
+                    about how technology can solve real-world problems, and has evolved into 
+                    hands-on experience across various domains from AI to robotics.
+                  </p>
+                  <p className="text-lg leading-relaxed mb-6">
+                    I enjoy working with diverse technologies including Python, Java, C++, and 
+                    modern web frameworks like React. Whether it's developing AI applications, 
+                    programming autonomous rovers, or building web solutions, I bring 
+                    enthusiasm and a problem-solving approach to every project.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    When I'm not coding, you'll find me exploring new technologies, 
+                    working on robotics projects, or collaborating with fellow students 
+                    on innovative solutions.
+                  </p>
+                </div>
+                <div className="lg:order-first">
+                  <img 
+                    src="/lovable-uploads/5c33aa71-a208-45c7-a6a1-f7c158780a61.png" 
+                    alt="Gerardo enjoying winter sports" 
+                    className="rounded-lg shadow-lg w-full h-auto"
+                  />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Personal Interests */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-primary mb-6">Beyond the Code</h2>
+          <Card>
+            <CardContent className="p-8">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-6">
-                  I'm a Computer Science student at Cornell University with a passion for 
-                  software engineering and robotics. My journey in tech began with curiosity 
-                  about how technology can solve real-world problems, and has evolved into 
-                  hands-on experience across various domains from AI to robotics.
-                </p>
-                <p className="text-lg leading-relaxed mb-6">
-                  I enjoy working with diverse technologies including Python, Java, C++, and 
-                  modern web frameworks like React. Whether it's developing AI applications, 
-                  programming autonomous rovers, or building web solutions, I bring 
-                  enthusiasm and a problem-solving approach to every project.
+                  Outside of technology, I'm passionate about staying active and exploring the outdoors. 
+                  I've been playing soccer since I was young, which taught me the value of teamwork 
+                  and perseverance. Music is another creative outlet for me - I enjoy playing guitar 
+                  in my spare time.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  When I'm not coding, you'll find me exploring new technologies, 
-                  working on robotics projects, or collaborating with fellow students 
-                  on innovative solutions.
+                  Adventure sports keep me energized and help me tackle challenges with a fresh perspective. 
+                  Whether I'm rock climbing, hitting the slopes skiing, or exploring new trails, 
+                  I find that these experiences enhance my problem-solving skills and bring balance to my life.
                 </p>
               </div>
             </CardContent>

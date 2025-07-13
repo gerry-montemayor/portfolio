@@ -106,10 +106,17 @@ const About = () => {
                 <p className="text-muted-foreground">Technology Advancement Center • Summer 2023</p>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  Built web applications and automation tools to streamline internal processes. 
-                  Gained experience with cloud platforms and modern development practices.
-                </p>
+                <div className="space-y-4">
+                  <p className="text-muted-foreground">
+                    Built web applications and automation tools to streamline internal processes. 
+                    Gained experience with cloud platforms and modern development practices.
+                  </p>
+                  <img 
+                    src="/lovable-uploads/c879417b-a8a4-46e4-a003-6ef33e3f1b48.png" 
+                    alt="TAC internship team photo" 
+                    className="rounded-lg shadow-lg w-3/4 h-auto mx-auto"
+                  />
+                </div>
               </CardContent>
             </Card>
           </div>

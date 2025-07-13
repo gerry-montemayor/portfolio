@@ -34,14 +34,20 @@ const Home = () => {
             </div>
             
             <div className="flex gap-4 pt-4">
-              <Button variant="ghost" size="icon">
-                <Github className="h-5 w-5" />
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://github.com/gerry-montemayor" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-5 w-5" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon">
-                <Linkedin className="h-5 w-5" />
+              <Button variant="ghost" size="icon" asChild>
+                <a href="https://www.linkedin.com/in/gerry-montemayor/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5" />
+                </a>
               </Button>
-              <Button variant="ghost" size="icon">
-                <Mail className="h-5 w-5" />
+              <Button variant="ghost" size="icon" asChild>
+                <a href="mailto:gerardom1226@gmail.com">
+                  <Mail className="h-5 w-5" />
+                </a>
               </Button>
             </div>
           </div>

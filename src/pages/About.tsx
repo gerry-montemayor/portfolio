@@ -52,7 +52,7 @@ const About = () => {
 
         {/* Personal Interests */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-primary mb-6">Beyond the Code</h2>
+          <h2 className="text-2xl font-bold text-primary mb-6">Hobbies</h2>
           <Card>
             <CardContent className="p-8">
               <div className="prose prose-lg max-w-none">

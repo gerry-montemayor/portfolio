@@ -6,9 +6,9 @@
 
 @layer base {
   :root {
-    /* Base colors - Dark blue background */
-    --background: 220 50% 15%;
-    --foreground: 40 15% 97%;
+    /* Base colors - Darker blue background */
+    --background: 220 50% 12%;
+    --foreground: 35 35% 75%;
 
     /* Card colors */
     --card: 220 45% 20%;
@@ -28,7 +28,7 @@
 
     /* Muted colors - Tan tones */
     --muted: 220 40% 25%;
-    --muted-foreground: 35 25% 65%;
+    --muted-foreground: 35 35% 70%;
 
     /* Accent - Off white */
     --accent: 40 15% 90%;

@@ -1,34 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code2, Palette, Users, Coffee } from "lucide-react";
 
 const About = () => {
   const skills = [
     "React", "TypeScript", "Node.js", "Python", "PostgreSQL", 
     "AWS", "Docker", "Git", "UI/UX Design", "REST APIs"
-  ];
-
-  const values = [
-    {
-      icon: Code2,
-      title: "Clean Code",
-      description: "Writing maintainable, readable code that stands the test of time."
-    },
-    {
-      icon: Palette,
-      title: "Design Focus",
-      description: "Creating beautiful, intuitive interfaces that users love."
-    },
-    {
-      icon: Users,
-      title: "Collaboration",
-      description: "Working effectively with teams to deliver great products."
-    },
-    {
-      icon: Coffee,
-      title: "Continuous Learning",
-      description: "Always exploring new technologies and improving my craft."
-    }
   ];
 
   return (
@@ -85,23 +61,34 @@ const About = () => {
           </div>
         </div>
 
-        {/* Values */}
+        {/* Experience */}
         <div>
-          <h2 className="text-2xl font-bold text-primary mb-6">What Drives Me</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {values.map((value) => (
-              <Card key={value.title}>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
-                    <value.icon className="h-6 w-6 text-primary" />
-                    {value.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <h2 className="text-2xl font-bold text-primary mb-6">Experience</h2>
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Senior Full Stack Developer</CardTitle>
+                <p className="text-muted-foreground">TechCorp Inc. • 2022 - Present</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Lead development of customer-facing web applications using React, Node.js, and PostgreSQL. 
+                  Collaborated with cross-functional teams to deliver high-quality software solutions.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Frontend Developer</CardTitle>
+                <p className="text-muted-foreground">StartupXYZ • 2020 - 2022</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Built responsive web interfaces and improved user experience across multiple product lines. 
+                  Worked with design teams to implement pixel-perfect UI components.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>

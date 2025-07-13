@@ -11,7 +11,7 @@ const Home = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl font-bold text-primary">
-                Hello, I'm Alex
+                Hello, I'm Gerry
               </h1>
               <h2 className="text-2xl md:text-3xl text-muted-foreground">
                 Full Stack Developer
@@ -38,13 +38,13 @@ const Home = () => {
             
             <div className="flex gap-4 pt-4">
               <Button variant="ghost" size="icon">
-                <Github className="h-5 w-5" />
+                <Github className="h-6 w-6" />
               </Button>
               <Button variant="ghost" size="icon">
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-6 w-6" />
               </Button>
               <Button variant="ghost" size="icon">
-                <Mail className="h-5 w-5" />
+                <Mail className="h-6 w-6" />
               </Button>
             </div>
           </div>

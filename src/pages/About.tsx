@@ -67,7 +67,7 @@ const About = () => {
 
         {/* Experience */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-primary mb-6">Experience</h2>
+          <h2 className="text-2xl font-bold text-primary mb-6">Experiences</h2>
           <div className="space-y-6">
             <Card>
               <CardHeader>
@@ -77,8 +77,10 @@ const About = () => {
               <CardContent>
                 <div className="space-y-4">
                   <p className="text-muted-foreground">
-                    Developed AI-powered software solutions and contributed to machine learning projects. 
-                    Collaborated with engineering teams to implement scalable software architectures.
+                    I had the incredible opportunity to intern at Seam AI this past summer, 
+                    a startup based in San Francisc. Seam leverages AI in a platform that
+                    supports sales/marketing teams. I worked on an agent to help clients build
+                    custom person/company/job level personas to help them find high business-potential profiles.
                   </p>
                   <img 
                     src="/lovable-uploads/d3c0b009-5adb-4a54-9872-e247941c904b.png" 
@@ -95,8 +97,10 @@ const About = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Programmed autonomous navigation systems and sensor integration for Mars rover prototype. 
-                  Utilized ROS2, C++, and Python for real-time robotics applications.
+                  I've been a member of Cornell Mars Rover since my sophomore year. As a part of the 
+                  Software Subteam, I contribute to autonomous navigation, soil sample detection, and more!
+                  I've primarily worked in python and ROS2 (Robot Operating System) to build nodes and packages for
+                  different capabilities of the rover, such as object detection.
                 </p>
               </CardContent>
             </Card>
@@ -108,8 +112,8 @@ const About = () => {
               <CardContent>
                 <div className="space-y-4">
                   <p className="text-muted-foreground">
-                    Built web applications and automation tools to streamline internal processes. 
-                    Gained experience with cloud platforms and modern development practices.
+                    At the TAC, I built a fully-fledged front-desk AI assistant. I had a fun time working with
+                    LLMs, learning about full-stack development, and seeing my final product being used!
                   </p>
                   <img 
                     src="/lovable-uploads/c879417b-a8a4-46e4-a003-6ef33e3f1b48.png" 

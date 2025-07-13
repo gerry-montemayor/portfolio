@@ -70,7 +70,7 @@ const About = () => {
             <Card>
               <CardHeader>
                 <CardTitle>Software Engineer Intern</CardTitle>
-                <p className="text-muted-foreground">Seam AI • Summer 2024</p>
+                <p className="text-muted-foreground">Seam AI • Summer 2025</p>
               </CardHeader>
               <CardContent>
                 <div className="grid lg:grid-cols-2 gap-6 items-center">
@@ -121,7 +121,7 @@ const About = () => {
             <Card>
               <CardHeader>
                 <CardTitle>Software Engineer Intern</CardTitle>
-                <p className="text-muted-foreground">Technology Advancement Center • Summer 2023</p>
+                <p className="text-muted-foreground">Technology Advancement Center • Summer 2024</p>
               </CardHeader>
               <CardContent>
                 <div className="grid lg:grid-cols-2 gap-6 items-center">

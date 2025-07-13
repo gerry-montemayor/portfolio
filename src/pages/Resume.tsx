@@ -2,8 +2,49 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Download, Mail, Phone, Linkedin, Github } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const Resume = () => {
+  const { toast } = useToast();
+
+  const handleDownloadResume = async () => {
+    try {
+      const { data, error } = await supabase.storage
+        .from('resume')
+        .download('gerardo-montemayor-resume.pdf');
+
+      if (error) {
+        toast({
+          title: "Download failed",
+          description: "Resume PDF not found. Please upload your resume first.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Create download link
+      const url = URL.createObjectURL(data);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Gerardo-Montemayor-Resume.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      toast({
+        title: "Success",
+        description: "Resume downloaded successfully!",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to download resume. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
   const experience = [
     {
       title: "Software Engineering Intern",
@@ -121,7 +162,7 @@ const Resume = () => {
             </div>
           </div>
           
-          <Button>
+          <Button onClick={handleDownloadResume}>
             <Download className="mr-2 h-4 w-4" />
             Download PDF
           </Button>

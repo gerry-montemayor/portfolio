@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <nav className="bg-card border-b border-border sticky top-0 z-50">
+    <nav className="bg-card/50 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <NavLink to="/" className="text-xl font-bold text-primary">
@@ -12,7 +12,7 @@ const Navigation = () => {
             <NavLink 
               to="/" 
               className={({ isActive }) => 
-                `hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : 'text-foreground'}`
+                `hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : 'text-muted-foreground'}`
               }
             >
               Home
@@ -20,7 +20,7 @@ const Navigation = () => {
             <NavLink 
               to="/about" 
               className={({ isActive }) => 
-                `hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : 'text-foreground'}`
+                `hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : 'text-muted-foreground'}`
               }
             >
               About
@@ -28,7 +28,7 @@ const Navigation = () => {
             <NavLink 
               to="/resume" 
               className={({ isActive }) => 
-                `hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : 'text-foreground'}`
+                `hover:text-primary transition-colors ${isActive ? 'text-primary font-medium' : 'text-muted-foreground'}`
               }
             >
               Resume

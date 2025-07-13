@@ -3,8 +3,8 @@ import { Badge } from "@/components/ui/badge";
 
 const About = () => {
   const skills = [
-    "React", "TypeScript", "Node.js", "Python", "PostgreSQL", 
-    "AWS", "Docker", "Git", "UI/UX Design", "REST APIs"
+    "Python", "Java", "C++", "ROS2", "Git", "AWS", "GCP", "React", 
+    "TypeScript", "Node.js", "Docker"
   ];
 
   return (
@@ -14,7 +14,7 @@ const About = () => {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-primary mb-4">About Me</h1>
           <p className="text-xl text-muted-foreground">
-            Full Stack Developer with a passion for creating digital experiences
+            Computer Science Student at Cornell University & Aspiring Software Engineer
           </p>
         </div>
 
@@ -24,29 +24,72 @@ const About = () => {
             <CardContent className="p-8">
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-6">
-                  I'm a passionate full-stack developer with over 5 years of experience 
-                  building web applications. My journey started with curiosity about how 
-                  websites work, and it has evolved into a love for creating meaningful 
-                  digital experiences.
+                  I'm a Computer Science student at Cornell University with a passion for 
+                  software engineering and robotics. My journey in tech began with curiosity 
+                  about how technology can solve real-world problems, and has evolved into 
+                  hands-on experience across various domains from AI to robotics.
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
-                  I specialize in modern JavaScript frameworks, particularly React, and 
-                  enjoy working across the entire tech stack. Whether it's crafting 
-                  pixel-perfect user interfaces or designing robust backend systems, 
-                  I bring attention to detail and a problem-solving mindset to every project.
+                  I enjoy working with diverse technologies including Python, Java, C++, and 
+                  modern web frameworks like React. Whether it's developing AI applications, 
+                  programming autonomous rovers, or building web solutions, I bring 
+                  enthusiasm and a problem-solving approach to every project.
                 </p>
                 <p className="text-lg leading-relaxed">
                   When I'm not coding, you'll find me exploring new technologies, 
-                  contributing to open source projects, or sharing knowledge with 
-                  the developer community through blog posts and mentoring.
+                  working on robotics projects, or collaborating with fellow students 
+                  on innovative solutions.
                 </p>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* Skills */}
+        {/* Experience */}
         <div className="mb-12">
+          <h2 className="text-2xl font-bold text-primary mb-6">Experience</h2>
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Software Engineer Intern</CardTitle>
+                <p className="text-muted-foreground">Seam AI • Summer 2024</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Developed AI-powered software solutions and contributed to machine learning projects. 
+                  Collaborated with engineering teams to implement scalable software architectures.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Robotics Software Engineer</CardTitle>
+                <p className="text-muted-foreground">Cornell Mars Rover • 2023 - Present</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Programmed autonomous navigation systems and sensor integration for Mars rover prototype. 
+                  Utilized ROS2, C++, and Python for real-time robotics applications.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Software Engineer Intern</CardTitle>
+                <p className="text-muted-foreground">Technology Advancement Center • Summer 2023</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Built web applications and automation tools to streamline internal processes. 
+                  Gained experience with cloud platforms and modern development practices.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Skills */}
+        <div>
           <h2 className="text-2xl font-bold text-primary mb-6">Skills & Technologies</h2>
           <div className="flex flex-wrap gap-3">
             {skills.map((skill) => (
@@ -58,37 +101,6 @@ const About = () => {
                 {skill}
               </Badge>
             ))}
-          </div>
-        </div>
-
-        {/* Experience */}
-        <div>
-          <h2 className="text-2xl font-bold text-primary mb-6">Experience</h2>
-          <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Senior Full Stack Developer</CardTitle>
-                <p className="text-muted-foreground">TechCorp Inc. • 2022 - Present</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Lead development of customer-facing web applications using React, Node.js, and PostgreSQL. 
-                  Collaborated with cross-functional teams to deliver high-quality software solutions.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Frontend Developer</CardTitle>
-                <p className="text-muted-foreground">StartupXYZ • 2020 - 2022</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Built responsive web interfaces and improved user experience across multiple product lines. 
-                  Worked with design teams to implement pixel-perfect UI components.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>

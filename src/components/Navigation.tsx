@@ -5,7 +5,7 @@ const Navigation = () => {
     <nav className="bg-card/50 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <NavLink to="/" className="text-xl font-bold text-primary">
+          <NavLink to="/" className="text-3xl font-bold text-secondary">
             GM
           </NavLink>
           <div className="flex space-x-8">

@@ -6,8 +6,8 @@
 
 @layer base {
   :root {
-    /* Base colors - Darker blue background */
-    --background: 220 50% 12%;
+    /* Base colors - Navy blue background */
+    --background: 220 60% 8%;
     --foreground: 35 35% 75%;
 
     /* Card colors */

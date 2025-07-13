@@ -47,7 +47,7 @@ const About = () => {
                   <img 
                     src={profilePhoto} 
                     alt="Gerardo enjoying winter sports" 
-                    className="rounded-full shadow-lg w-full h-auto aspect-square object-cover"
+                    className="shadow-lg w-full h-auto aspect-square object-cover"
                   />
                 </div>
               </div>

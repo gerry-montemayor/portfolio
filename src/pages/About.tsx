@@ -83,7 +83,7 @@ const About = () => {
                   <img 
                     src="/lovable-uploads/d3c0b009-5adb-4a54-9872-e247941c904b.png" 
                     alt="Seam AI team outing in San Francisco" 
-                    className="rounded-lg shadow-lg w-full h-auto"
+                    className="rounded-lg shadow-lg w-3/4 h-auto mx-auto"
                   />
                 </div>
               </CardContent>

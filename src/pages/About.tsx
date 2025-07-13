@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import profilePhoto from "@/assets/profile-photo.jpg";
 
 const About = () => {
   const skills = [
@@ -45,9 +44,9 @@ const About = () => {
                 </div>
                 <div className="lg:order-first">
                   <img 
-                    src={profilePhoto} 
+                    src="/lovable-uploads/5c33aa71-a208-45c7-a6a1-f7c158780a61.png" 
                     alt="Gerardo enjoying winter sports" 
-                    className="shadow-lg w-full h-auto aspect-square object-cover"
+                    className="rounded-lg shadow-lg w-full h-auto"
                   />
                 </div>
               </div>

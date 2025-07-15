@@ -56,7 +56,7 @@ const About = () => {
               <div className="prose prose-lg max-w-none">
                 <p className="text-lg leading-relaxed mb-6">
                   I'm passionate about staying active and exploring the outdoors. I've played soccer since I was you, and enjoy
-                   other sports, such as rock climbing and skiing. I also am learning how to play the guitar!
+                   other sports, such as rock climbing and skiing. I also am learning how to play the guitar! 🎸 ⚽
                 </p>
               </div>
             </CardContent>

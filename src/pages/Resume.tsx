@@ -141,7 +141,7 @@ const Resume = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-primary mb-2">Gerardo Montemayor</h1>
-          <p className="text-xl text-muted-foreground mb-4">Computer Science Student & Aspiring Software Engineer</p>
+          <p className="text-xl text-muted-foreground mb-4">CS & Aspiring Software Engineer</p>
           
           <div className="flex justify-center gap-6 text-sm text-muted-foreground mb-6">
             <div className="flex items-center gap-1">

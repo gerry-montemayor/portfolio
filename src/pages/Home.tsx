@@ -14,8 +14,8 @@ const Home = () => {
               </h1>
               
               <p className="text-lg text-muted-foreground max-w-lg">
-                Cornell University student passionate about AI, robotics, and software development. 
-                Building the future through innovative technology solutions.
+                I'm a senior at Cornell University studying CS, passionate about AI, robotics, and software development. 
+                
               </p>
             </div>
             

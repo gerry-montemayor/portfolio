@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1A1718;
+      --accent: #ADEEE3;
+      --accent-2: #48639C;
+      --text: #f5f7f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      padding: 12px 14px;
+      backdrop-filter: blur(6px);
+    }
+    .header-inner {
+      width: min(760px, 82%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      color: var(--accent-2);
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: 42px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0;
+    }
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 12px;
+      border-radius: 12px;
+      color: var(--accent-2);
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+      gap: 8px;
+    }
+    nav a svg {
+      width: 45px;
+      height: 45px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+    }
+
+    nav a img {
+      width: 45px;
+      height: 45px;
+      display: block;
+      filter: invert(29%) sepia(18%) saturate(1150%) hue-rotate(184deg) brightness(96%) contrast(90%);
+    }
+    nav a:hover,
+    nav a:focus-visible {
+      background: rgba(72, 99, 156, 0.14);
+      color: var(--accent);
+      outline: none;
+    }
+    .container {
+      width: min(760px, 82%);
+      margin: 0 auto;
+      padding: 32px 0 72px;
+      min-height: 40vh;
+    }
+    
+    /* Coursework nav */
+    .hero h1 {
+      color: #E36D6D;
+    }
+    
+    .coursework-title {
+      margin: 0 0 12px;
+      color: #E36D6D;
+      display: inline-block;
+    }
+    
+    .coursework-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .toggle-btn {
+      background: rgba(227, 109, 109, 0.15);
+      border: 1px solid rgba(227, 109, 109, 0.4);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: #E36D6D;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .toggle-btn:hover {
+      background: rgba(227, 109, 109, 0.25);
+      border-color: rgba(227, 109, 109, 0.6);
+    }
+    
+    .toggle-btn svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s ease;
+    }
+    
+    .toggle-btn.collapsed svg {
+      transform: rotate(-90deg);
+    }
+    
+    .coursework-content {
+      max-height: 2000px;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .coursework-content.hidden {
+      max-height: 0;
+    }
+    
+    .course-nav-bar {
+      display: flex;
+      gap: 6px;
+      margin: 0 0 24px;
+      background: rgba(173, 238, 227, 0.08);
+      border: 1px solid rgba(173, 238, 227, 0.25);
+      border-radius: 12px;
+      padding: 6px;
+      width: fit-content;
+      max-width: 100%;
+    }
+    
+    .year-group {
+      position: relative;
+      flex-shrink: 0;
+    }
+    
+    .year-btn {
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    
+    .year-btn:hover,
+    .year-btn.active {
+      background: rgba(173, 238, 227, 0.18);
+      color: var(--accent);
+    }
+    
+    .semester-dropdown {
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(26, 23, 24, 0.98);
+      border: 1px solid rgba(173, 238, 227, 0.35);
+      border-radius: 10px;
+      padding: 6px;
+      min-width: 120px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 100;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    
+    .semester-dropdown::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+    }
+    
+    .year-group:hover .semester-dropdown {
+      opacity: 1;
+      pointer-events: all;
+    }
+    
+    .semester-btn {
+      display: block;
+      width: 100%;
+      padding: 9px 14px;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+    
+    .semester-btn:hover,
+    .semester-btn.active {
+      background: rgba(173, 238, 227, 0.18);
+      color: var(--accent);
+    }
+    
+    .course-list-container {
+      min-height: 200px;
+    }
+    
+    .course-current {
+      margin: 0 0 14px;
+      color: #E36D6D;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    
+    .course-list {
+      padding-left: 20px;
+      margin: 0;
+      color: #dbe5e7;
+      line-height: 1.6;
+      list-style: none;
+    }
+    
+    .course-list li {
+      margin-bottom: 10px;
+      padding-left: 8px;
+      position: relative;
+    }
+    
+    .course-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+      position: absolute;
+      left: -12px;
+    }
+    
+    .course-list strong { 
+      color: var(--accent);
+      font-weight: 700;
+    }
+    
+    /* Professional section */
+    .professional-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .professional-title {
+      margin: 0;
+      color: #E36D6D;
+      display: inline-block;
+    }
+
+    .professional-content {
+      max-height: 2000px;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .professional-content.hidden {
+      max-height: 0;
+    }
+
+    .professional-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .professional-item {
+      overflow: hidden;
+    }
+
+    .professional-item::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    .professional-role {
+      margin: 0 0 4px;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .professional-company {
+      margin: 0 0 4px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent-2);
+    }
+
+    .professional-date {
+      margin: 0 0 12px;
+      font-size: 14px;
+      color: #9aa4a6;
+    }
+
+    .professional-image {
+      max-width: 280px;
+      border-radius: 10px;
+      float: left;
+      margin: 4px 20px 12px 0;
+    }
+
+    .professional-image.right {
+      float: right;
+      margin: 4px 0 12px 20px;
+    }
+
+    .professional-description {
+      margin: 0;
+      color: #c7d2d5;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* Projects section */
+    .projects-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .projects-title {
+      margin: 0;
+      color: #E36D6D;
+      display: inline-block;
+    }
+    
+    .projects-content {
+      max-height: 3000px;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .projects-content.hidden {
+      max-height: 0;
+    }
+    
+    .project-subsection {
+      margin-bottom: 48px;
+    }
+    
+    .project-subsection:last-child {
+      margin-bottom: 0;
+    }
+    
+    .subsection-title {
+      margin: 0 0 20px;
+      color: var(--accent-2);
+      font-size: 20px;
+      font-weight: 700;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(72, 99, 156, 0.3);
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+    
+    .project-card {
+      background: rgba(173, 238, 227, 0.06);
+      border: 1px solid rgba(173, 238, 227, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .project-card:hover {
+      border-color: rgba(173, 238, 227, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background: rgba(72, 99, 156, 0.15);
+    }
+    
+    .project-info {
+      padding: 18px;
+    }
+    
+    .project-name {
+      margin: 0 0 8px;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .project-description {
+      margin: 0 0 12px;
+      color: #c7d2d5;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent-2);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+    
+    .project-link:hover {
+      color: var(--accent);
+    }
+    
+    .project-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+    
+    footer {
+      margin: 64px 0 32px;
+      text-align: center;
+      color: #9aa4a6;
+      font-size: 14px;
+    }
+    
+    @media (max-width: 640px) {
+      header { gap: 12px; }
+      nav a { padding: 10px; }
+      .course-nav-bar {
+        gap: 4px;
+        padding: 4px;
+      }
+      .year-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Home">GM.</a>
+      <nav aria-label="Primary">
+      <a href="index.html" aria-label="Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 10.5 12 4l8 6.5v8a.5.5 0 0 1-.5.5H4.5a.5.5 0 0 1-.5-.5z"></path>
+          <path d="M9 20v-6h6v6"></path>
+        </svg>
+      </a>
+      <a href="experience.html" aria-label="Experience">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"></path>
+          <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path>
+          <path d="M4 12h16"></path>
+        </svg>
+      </a>
+      <a href="resume.html" aria-label="Resume">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 4h7l4 4v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path>
+          <path d="M14 4v4h4"></path>
+          <path d="M9 13h6"></path>
+          <path d="M9 17h4"></path>
+        </svg>
+      </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="Experience">
+      <h1>My Experience</h1>
+    </section>
+
+    <section aria-label="Professional Experience" style="margin-top:40px;">
+      <div class="professional-header">
+        <h2 class="professional-title">Professional</h2>
+        <button class="toggle-btn" id="toggle-professional" aria-expanded="true" aria-controls="professional-content">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="professional-content" id="professional-content">
+        <ul class="professional-list">
+          <li class="professional-item">
+            <h3 class="professional-role">Software Engineering Intern</h3>
+            <p class="professional-company">Seam AI</p>
+            <p class="professional-date">Summer 2025</p>
+            <img src="media/seam_group.png" alt="Seam AI team" class="professional-image">
+            <p class="professional-description">Over the summer, I was an intern for Seam AI, a startup based out of SF. I had a great summer working for the team, building a sales persona AI agent project from start to end.</p>
+          </li>
+          <li class="professional-item">
+            <h3 class="professional-role">Robotics Software Engineer</h3>
+            <p class="professional-company">Cornell Mars Rover</p>
+            <p class="professional-date">Present</p>
+            <img src="media/cmr.png" alt="Cornell Mars Rover" class="professional-image right" style="max-height: 200px; width: auto;">
+            <p class="professional-description">Since my sophomore year, I've been a member of the software team for Cornell Mars Rover, a competitive project team. I've worked on projects such as rover dashboards and autonomous augmented reality tag finding!.</p>
+          </li>
+          <li class="professional-item">
+            <h3 class="professional-role">Software Engineering Intern</h3>
+            <p class="professional-company">The TAC</p>
+            <p class="professional-date">Summer 2024</p>
+            <img src="media/tac.png" alt="The TAC" class="professional-image">
+            <p class="professional-description">My first internship was at a local non-profit, the TAC (technology advancement center), in the cybersecurity space. I learned about cybersecurity and built a front-desk chatbot for the facility.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-label="Projects" style="margin-top:40px;">
+      <div class="projects-header">
+        <h2 class="projects-title">Projects</h2>
+        <button class="toggle-btn collapsed" id="toggle-projects" aria-expanded="false" aria-controls="projects-content">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="projects-content hidden" id="projects-content">
+        <!-- Machine Learning Section -->
+        <div class="project-subsection">
+          <h3 class="subsection-title">Machine Learning</h3>
+          <div class="projects-grid">
+            <div class="project-card">
+              <img src="media/luka_paper.png" alt="Luka Paper" class="project-image">
+              <div class="project-info">
+                <h4 class="project-name">LuKA Research Paper</h4>
+                <p class="project-description">LuKA = Line and Cluster Key-Value Approximations, a project for CS 6784: Gen AI. We developed a new method for KV caches by compressing low-importance sections of text and expanding relevant information during inference.</p>
+                <a href="https://github.com/ayf7/LuKA" class="project-link" target="_blank" rel="noopener noreferrer">
+                  View Project Github
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <div></div>
+                <a href="media/luka_report.pdf" class="project-link" target="_blank" rel="noopener noreferrer">
+                  View Paper PDF
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <img src="media/dora_poster.png" alt="Deep Learning Research" class="project-image">
+              <div class="project-info">
+                <h4 class="project-name">DoRA Paper</h4>
+                <p class="project-description">Class project for CS 4782: Deep Learning, where we recreated the results of the DoRA paper, which is a parameter-efficient fine-tuning strategy (PEFT) for LLMs.</p>
+                <a href="https://github.com/rolanrod/DoRA_Replicate" class="project-link" target="_blank" rel="noopener noreferrer">
+                  View Project Github
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <div></div>
+                <a href="media/dora_poster.pdf" class="project-link" target="_blank" rel="noopener noreferrer">
+                  View Poster PDF
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Embedded Systems Section -->
+        <div class="project-subsection">
+          <h3 class="subsection-title">Embedded Systems</h3>
+          <div class="projects-grid">
+            <div class="project-card">
+              <img src="media/fast_robot.png" alt="Fast Robots" class="project-image">
+              <div class="project-info">
+                <h4 class="project-name">Autonomous Robot Car</h4>
+                <p class="project-description">Current semester project for Fast Robots, ECE 4160, where we build a robot over the semester, focusing on implementing motion control, sensors, and efficient code for high performance. Follow along my progress with the project link! </p>
+                <a href="https://gerry-montemayor.github.io/gerry-montemayor-ECE4160/index.html" class="project-link" target="_blank" rel="noopener noreferrer">
+                  Project Website
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <img src="media/led_board.png" alt="Interactive LED Canvas" class="project-image">
+              <div class="project-info">
+                <h4 class="project-name">Embedded LED Project</h4>
+                <p class="project-description">Final project for ECE 3140: Embedded Systems, built an interactive LED board which users can interact with through a pygame app. Powered by the FRDM KL64Z dev board. Check out the project website and video below!</p>
+                <a href="https://www.youtube.com/watch?v=c4RdZXhYHIQ" class="project-link" target="_blank" rel="noopener noreferrer">
+                  View Project Video
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <div></div>
+                <a href="https://pages.github.coecis.cornell.edu/ece3140-sp2025/gm547-khp42-sk2693/" class="project-link" target="_blank" rel="noopener noreferrer">
+                  View Project Website
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <div></div>
+                <a href="https://github.com/gerry-montemayor/led_board" class="project-link" target="_blank" rel="noopener noreferrer">
+                  View Project Code
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game Development Section -->
+        <div class="project-subsection">
+          <h3 class="subsection-title">Game Development</h3>
+          <div class="projects-grid">
+            <div class="project-card">
+              <img src="media/mtd.png" alt="McGraw Tower Defense" class="project-image">
+              <div class="project-info">
+                <h4 class="project-name">McGraw Tower Defense</h4>
+                <p class="project-description">This game was a class project for CS 3110. We wrote this entire game in OCaml, a functional programming language, implemented collision physics, and created a visually impressive game with a Cornell theme.</p>
+                <a href="https://github.com/gerry-montemayor/McGrawTowerDefense" class="project-link" target="_blank" rel="noopener noreferrer">
+                  View on GitHub
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Coursework" style="margin-top:40px;">
+      <div class="coursework-header">
+        <h2 class="coursework-title">Coursework</h2>
+        <button class="toggle-btn collapsed" id="toggle-coursework" aria-expanded="false" aria-controls="coursework-content">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="coursework-content hidden" id="coursework-content">
+        <div class="course-nav-bar" role="navigation" aria-label="Year and semester selection">
+        <div class="year-group">
+          <button class="year-btn active" data-year="freshman">Freshman</button>
+          <div class="semester-dropdown">
+            <button class="semester-btn active" data-year="freshman" data-semester="fall">Fall</button>
+            <button class="semester-btn" data-year="freshman" data-semester="spring">Spring</button>
+          </div>
+        </div>
+        
+        <div class="year-group">
+          <button class="year-btn" data-year="sophomore">Sophomore</button>
+          <div class="semester-dropdown">
+            <button class="semester-btn" data-year="sophomore" data-semester="fall">Fall</button>
+            <button class="semester-btn" data-year="sophomore" data-semester="spring">Spring</button>
+          </div>
+        </div>
+        
+        <div class="year-group">
+          <button class="year-btn" data-year="junior">Junior</button>
+          <div class="semester-dropdown">
+            <button class="semester-btn" data-year="junior" data-semester="fall">Fall</button>
+            <button class="semester-btn" data-year="junior" data-semester="spring">Spring</button>
+          </div>
+        </div>
+        
+        <div class="year-group">
+          <button class="year-btn" data-year="senior">Senior</button>
+          <div class="semester-dropdown">
+            <button class="semester-btn" data-year="senior" data-semester="fall">Fall</button>
+            <button class="semester-btn" data-year="senior" data-semester="spring">Spring</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-list-container">
+        <div class="course-current" id="course-current">Freshman · Fall</div>
+        <ul class="course-list" id="course-list">
+          <li><strong>CHEM 2090:</strong> Engineering General Chemistry</li>
+          <li><strong>CS 1110:</strong> Intro Computing Using Python</li>
+          <li><strong>ENGL 1168:</strong> FWS: Cultural Studies</li>
+          <li><strong>ENGRG 1050:</strong> Engineering Seminar</li>
+          <li><strong>MATH 1910:</strong> Calculus For Engineers</li>
+          <li><strong>PE 1440:</strong> Badminton</li>
+        </ul>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Toggle professional section
+    const toggleProfessionalBtn = document.getElementById('toggle-professional');
+    const professionalContent = document.getElementById('professional-content');
+    const toggleProfessionalText = toggleProfessionalBtn.querySelector('span');
+
+    toggleProfessionalBtn.addEventListener('click', () => {
+      const isHidden = professionalContent.classList.toggle('hidden');
+      toggleProfessionalBtn.classList.toggle('collapsed', isHidden);
+      toggleProfessionalBtn.setAttribute('aria-expanded', !isHidden);
+      toggleProfessionalText.textContent = isHidden ? 'Show' : 'Hide';
+    });
+
+    // Toggle coursework section
+    const toggleBtn = document.getElementById('toggle-coursework');
+    const courseworkContent = document.getElementById('coursework-content');
+    const toggleText = toggleBtn.querySelector('span');
+
+    toggleBtn.addEventListener('click', () => {
+      const isHidden = courseworkContent.classList.toggle('hidden');
+      toggleBtn.classList.toggle('collapsed', isHidden);
+      toggleBtn.setAttribute('aria-expanded', !isHidden);
+      toggleText.textContent = isHidden ? 'Show' : 'Hide';
+    });
+
+    // Toggle projects section
+    const toggleProjectsBtn = document.getElementById('toggle-projects');
+    const projectsContent = document.getElementById('projects-content');
+    const toggleProjectsText = toggleProjectsBtn.querySelector('span');
+
+    toggleProjectsBtn.addEventListener('click', () => {
+      const isHidden = projectsContent.classList.toggle('hidden');
+      toggleProjectsBtn.classList.toggle('collapsed', isHidden);
+      toggleProjectsBtn.setAttribute('aria-expanded', !isHidden);
+      toggleProjectsText.textContent = isHidden ? 'Show' : 'Hide';
+    });
+
+    // Coursework data
+    const coursework = {
+      freshman: {
+        fall: [
+          { code: 'CHEM 2090', name: 'Engineering General Chemistry' },
+          { code: 'CS 1110', name: 'Intro Computing Using Python' },
+          { code: 'ENGL 1168', name: 'FWS: Cultural Studies' },
+          { code: 'ENGRG 1050', name: 'Engineering Seminar' },
+          { code: 'MATH 1910', name: 'Calculus For Engineers' },
+          { code: 'PE 1440', name: 'Badminton' }
+        ],
+        spring: [
+          { code: 'CS 2110', name: 'Obj-Oriented Prog & Data Struc' },
+          { code: 'ENGL 1168', name: 'FWS: Cultural Studies' },
+          { code: 'ENGRI 1210', name: 'Computing Tech in Smartphone' },
+          { code: 'MATH 1920', name: 'Multivariable Calculus Engrs' },
+          { code: 'PHYS 1110', name: 'Intro. to Experimental Physics' },
+          { code: 'PHYS 1112', name: 'Physics I: Mechanics & Heat' }
+        ]
+      },
+      sophomore: {
+        fall: [
+          { code: 'CS 2024', name: 'C++ Programming' },
+          { code: 'CS 2800', name: 'Discrete Structures' },
+          { code: 'CS 3110', name: 'Data Struct & Functional Progr' },
+          { code: 'PE 1245', name: 'Indoor Stationary Cycling' },
+          { code: 'PHYS 2213', name: 'Physics II: Electromagnetism' }
+        ],
+        spring: [
+          { code: 'CS 4820', name: 'Intro Analysis of Algorithms' },
+          { code: 'ECE 3100', name: 'Probability and Inference' },
+          { code: 'MATH 2940', name: 'Linear Algebra for Engineers' },
+          { code: 'PSYCH 1101', name: 'Introduction to Psychology' }
+        ]
+      },
+      junior: {
+        fall: [
+          { code: 'CS 3410', name: 'Computer System Organization' },
+          { code: 'CS 3780', name: 'Intro to Machine Learning' },
+          { code: 'CS 4750', name: 'Foundations of Robotics' },
+          { code: 'ENGRD 2720', name: 'Data Science for Engineers' }
+        ],
+        spring: [
+          { code: 'ASTRO 2212', name: 'The Solar System: Planets' },
+          { code: 'CS 4410', name: 'Operating Systems' },
+          { code: 'CS 4411', name: 'Practicum in Oper Syst' },
+          { code: 'CS 4782', name: 'Introduction to Deep Learning' },
+          { code: 'ECE 3140', name: 'Embedded Systems' },
+          { code: 'GDEV 2300', name: 'Food Sys and Sustainable Dev' }
+        ]
+      },
+      senior: {
+        fall: [
+          { code: 'CS 6784', name: 'Adv Topics in Machine Learning' },
+          { code: 'ECE 4450', name: 'Computer Networks & Telcomm' },
+          { code: 'ENGRC 3500', name: 'Engineering Communications' },
+          { code: 'HADM 4300', name: 'Introduction to Wines' },
+          { code: 'SPAN 2095', name: 'Spanish Intermediate Composit' }
+        ],
+        spring: [
+          { code: 'CS 4660', name: 'Foundatn Computational Imaging' },
+          { code: 'ECE 4160', name: 'Fast Robots' },
+          { code: 'FDSC 2300', name: 'Culinary Science' },
+          { code: 'PSYCH 2300', name: 'How the Brain Makes the Mind' }
+        ]
+      }
+    };
+
+    let currentYear = 'freshman';
+    let currentSemester = 'fall';
+
+    const courseList = document.getElementById('course-list');
+    const courseCurrent = document.getElementById('course-current');
+    const yearBtns = document.querySelectorAll('.year-btn');
+    const semesterBtns = document.querySelectorAll('.semester-btn');
+
+    function updateCourses() {
+      const courses = coursework[currentYear][currentSemester];
+      const yearLabel = currentYear.charAt(0).toUpperCase() + currentYear.slice(1);
+      const semesterLabel = currentSemester.charAt(0).toUpperCase() + currentSemester.slice(1);
+      
+      courseCurrent.textContent = `${yearLabel} · ${semesterLabel}`;
+      
+      courseList.innerHTML = courses.map(course => 
+        `<li><strong>${course.code}:</strong> ${course.name}</li>`
+      ).join('');
+    }
+
+    function updateActiveStates() {
+      yearBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.year === currentYear);
+      });
+      
+      semesterBtns.forEach(btn => {
+        btn.classList.toggle('active', 
+          btn.dataset.year === currentYear && btn.dataset.semester === currentSemester
+        );
+      });
+    }
+
+    semesterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentYear = btn.dataset.year;
+        currentSemester = btn.dataset.semester;
+        updateCourses();
+        updateActiveStates();
+      });
+    });
+
+    updateCourses();
+  </script>
+</body>
+</html>

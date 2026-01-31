@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1A1718;
+      --accent: #ADEEE3;
+      --accent-2: #48639C;
+      --text: #f5f7f8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      padding: 12px 14px;
+      backdrop-filter: blur(6px);
+    }
+    .header-inner {
+      width: min(760px, 82%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      color: var(--accent-2);
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: 42px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0;
+    }
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 12px;
+      border-radius: 12px;
+      color: var(--accent-2);
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+      gap: 8px;
+    }
+    nav a svg {
+      width: 45px;
+      height: 45px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+    }
+
+    nav a img {
+      width: 45px;
+      height: 45px;
+      display: block;
+      filter: invert(29%) sepia(18%) saturate(1150%) hue-rotate(184deg) brightness(96%) contrast(90%);
+    }
+    nav a:hover,
+    nav a:focus-visible {
+      background: rgba(72, 99, 156, 0.14);
+      color: var(--accent);
+      outline: none;
+    }
+    .container {
+      width: min(760px, 82%);
+      margin: 0 auto;
+      padding: 32px 0 72px;
+      min-height: 40vh;
+    }
+    footer {
+      margin: 64px 0 32px;
+      text-align: center;
+      color: #9aa4a6;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      color: #E36D6D;
+      margin-bottom: 8px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .contact-info a {
+      color: var(--accent-2);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .contact-info a:hover {
+      color: var(--accent);
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(173, 238, 227, 0.15);
+      border: 1px solid rgba(173, 238, 227, 0.4);
+      border-radius: 10px;
+      padding: 10px 16px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .download-btn:hover {
+      background: rgba(173, 238, 227, 0.25);
+      border-color: rgba(173, 238, 227, 0.6);
+    }
+
+    .download-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .resume-section {
+      margin-top: 36px;
+    }
+
+    .section-title {
+      color: #E36D6D;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(227, 109, 109, 0.3);
+    }
+
+    .resume-item {
+      margin-bottom: 28px;
+    }
+
+    .resume-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .item-title {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .item-date {
+      color: #9aa4a6;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .item-subtitle {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: var(--accent-2);
+      font-weight: 600;
+    }
+
+    .item-details {
+      color: #c7d2d5;
+      font-size: 14px;
+      margin: 0 0 6px;
+      line-height: 1.5;
+    }
+
+    .item-list {
+      margin: 0;
+      padding-left: 18px;
+      color: #c7d2d5;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .item-list li {
+      margin-bottom: 6px;
+    }
+
+    .item-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .skill-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .skill-label {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+      min-width: 180px;
+    }
+
+    .skill-value {
+      color: #c7d2d5;
+      font-size: 14px;
+      flex: 1;
+    }
+
+    .project-links {
+      display: inline-flex;
+      gap: 12px;
+      margin-left: 8px;
+    }
+
+    .project-links a {
+      color: var(--accent-2);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .project-links a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 640px) {
+      header { gap: 12px; }
+      nav a { padding: 10px; }
+      .item-header { flex-direction: column; }
+      .skill-row { flex-direction: column; gap: 4px; }
+      .skill-label { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Home">GM.</a>
+      <nav aria-label="Primary">
+      <a href="index.html" aria-label="Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 10.5 12 4l8 6.5v8a.5.5 0 0 1-.5.5H4.5a.5.5 0 0 1-.5-.5z"></path>
+          <path d="M9 20v-6h6v6"></path>
+        </svg>
+      </a>
+      <a href="experience.html" aria-label="Experience">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 7h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"></path>
+          <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path>
+          <path d="M4 12h16"></path>
+        </svg>
+      </a>
+      <a href="resume.html" aria-label="Resume">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 4h7l4 4v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path>
+          <path d="M14 4v4h4"></path>
+          <path d="M9 13h6"></path>
+          <path d="M9 17h4"></path>
+        </svg>
+      </a>
+    
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="Resume">
+      <h1>Gerardo Montemayor</h1>
+      <div class="contact-info">
+        <a href="mailto:gerardom1226@gmail.com">gerardom1226@gmail.com</a>
+        <a href="tel:+14435380729">(443) 538-0729</a>
+        <a href="https://linkedin.com/in/gerry-montemayor" target="_blank">LinkedIn</a>
+        <a href="https://github.com/gerry-montemayor" target="_blank">GitHub</a>
+      </div>
+      <a href="media/gerry_resume.pdf" download class="download-btn">
+        <svg viewBox="0 0 24 24">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download PDF
+      </a>
+    </section>
+
+    <!-- Education -->
+    <section class="resume-section" aria-label="Education">
+      <h2 class="section-title">Education</h2>
+      <div class="resume-item">
+        <div class="item-header">
+          <h3 class="item-title">Cornell University</h3>
+          <span class="item-date">May 2026</span>
+        </div>
+        <p class="item-subtitle">B.S. in Computer Science, Minor in Electrical & Computer Engineering | GPA: 3.5/4.0</p>
+        <p class="item-details"><strong style="color: var(--accent);">Relevant Courses:</strong> Generative AI, Deep Learning, Machine Learning, Algorithms, Data Science, OOP & Data Structures</p>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="resume-section" aria-label="Experience">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="resume-item">
+        <div class="item-header">
+          <h3 class="item-title">Machine Learning Engineering Intern</h3>
+          <span class="item-date">June 2025 - Aug 2025</span>
+        </div>
+        <p class="item-subtitle">Seam AI | San Francisco, CA</p>
+        <ul class="item-list">
+          <li>Built a conversational Sales Persona generation agent with FastAPI backend, evaluation and monitoring on Langsmith, and Typescript/React frontend, reducing customer time-to-search by 1 hour per Persona</li>
+          <li>Trained a NN classifier using feature-based transfer learning to align research queries to retrievers, maintaining accuracy parity with Gemini2.0-Flash router and reducing p50 latency from 1.5s to 50ms</li>
+          <li>Implemented a string utilities module for broad use in the application unifying logging, error handling, and normalization. Normalization reduced our job title FAISS index disk space by 9MB without impacting accuracy</li>
+        </ul>
+      </div>
+
+      <div class="resume-item">
+        <div class="item-header">
+          <h3 class="item-title">Application Developer</h3>
+          <span class="item-date">Sep 2024 - Mar 2025</span>
+        </div>
+        <p class="item-subtitle">AI Innovation Lab | IT@Cornell</p>
+        <ul class="item-list">
+          <li>Developer for AI initiative at Cornell building GenAI-powered apps to support campus organizations</li>
+          <li>Building application integrating OCR technologies, VLMs, and LLMs to automate expense processing, ensure compliance with state/school policies, and reduce manual workload for financial team</li>
+        </ul>
+      </div>
+
+      <div class="resume-item">
+        <div class="item-header">
+          <h3 class="item-title">Software Developer Intern</h3>
+          <span class="item-date">May 2024 - Aug 2024</span>
+        </div>
+        <p class="item-subtitle">Technology Advancement Center | Columbia, MD</p>
+        <ul class="item-list">
+          <li>Developed a virtual assistant to support business operations, including front-desk interactions and company events</li>
+          <li>Deployed a secure web application with Docker and AWS EC2, establishing a CI/CD pipeline to streamline delivery of weekly MVPs and improvements based on user feedback</li>
+        </ul>
+      </div>
+
+      <div class="resume-item">
+        <div class="item-header">
+          <h3 class="item-title">Robotics Software Engineer</h3>
+          <span class="item-date">Aug 2023 - Present</span>
+        </div>
+        <p class="item-subtitle">Cornell Mars Rover</p>
+        <ul class="item-list">
+          <li>Programmer for project team that builds semi-autonomous rover to compete in University Rover Challenge (URC)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="resume-section" aria-label="Projects">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="resume-item">
+        <div class="item-header">
+          <h3 class="item-title">GenAI Research Project <span class="project-links"> </span></h3>
+          <span class="item-date">Aug 2025 - Dec 2025</span>
+        </div>
+        <p class="item-subtitle">CS 6784</p>
+        <ul class="item-list">
+          <li>Co-authored research paper on LuKA, our proposed KV cache design that compresses long contexts for more efficient LLM inference while preserving information</li>
+          <li>Implemented sparse attention mechanisms and developed the evaluation framework for benchmarking performance, achieving 27% accuracy improvement over SOTA methods on multi-topic QA benchmarks with LuKA</li>
+        </ul>
+      </div>
+
+      <div class="resume-item">
+        <div class="item-header">
+          <h3 class="item-title">AR Tag Detector</h3>
+          <span class="item-date">Aug 2024 - May 2025</span>
+        </div>
+        <p class="item-subtitle">Cornell Mars Rover</p>
+        <ul class="item-list">
+          <li>Implemented a ROS2 package with OpenCV to process camera input to detecting tags in field, determine relative positions and orientations of tags, and navigate difficult terrain for Autonomous Challenge at URC</li>
+        </ul>
+      </div>
+
+      <div class="resume-item">
+        <div class="item-header">
+          <h3 class="item-title">Rover Interface</h3>
+          <span class="item-date">Aug 2023 - May 2024</span>
+        </div>
+        <p class="item-subtitle">Cornell Mars Rover</p>
+        <ul class="item-list">
+          <li>Implemented a high-performance interface to operate and access rover capabilities, including camera feeds, life-detection systems, robotic arm simulations, and a central ROS2 node launch hub</li>
+          <li>Created specialized GUI components using React and Foxglove Studio, a robot visualization platform, enhancing rover control through seamless integration with ROS2</li>
+        </ul>
+      </div>
+
+      <div class="resume-item">
+        <div class="item-header">
+          <h3 class="item-title">McGraw Tower Defense <span class="project-links"><a href="https://github.com/gerry-montemayor/McGrawTowerDefense" target="_blank">GitHub</a></span></h3>
+          <span class="item-date">Sep 2023 - Dec 2023</span>
+        </div>
+        <ul class="item-list">
+          <li>Developed a Cornell-themed tower defense game in OCaml with player upgrades and bullet-tracking physics</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="resume-section" aria-label="Skills">
+      <h2 class="section-title">Skills & Other</h2>
+      <div class="skills-grid">
+        <div class="skill-row">
+          <span class="skill-label">Programming Languages:</span>
+          <span class="skill-value">Python, C/C++, JavaScript, Java, OCaml, HTML/CSS</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Frameworks/Libraries:</span>
+          <span class="skill-value">Pytorch, Scikit, Numpy, Langsmith, ReactJS, ExpressJS, NodeJS, ROS</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Developer Tools:</span>
+          <span class="skill-value">Git, Docker, Google Cloud Platform, AWS ECS, Linux, MongoDB, Foxglove Studio</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Languages:</span>
+          <span class="skill-value">English, Spanish</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+
+</body>
+</html>
